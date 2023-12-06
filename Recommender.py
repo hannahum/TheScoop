@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
 def craving_recommendations(input):
-    descriptions = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/products.csv")
+    descriptions = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/combined/products.csv")
 
     # Add new row with user input at the end of the Data Frame
     new_row_data = {
@@ -52,7 +52,7 @@ def display_filtered_flavors(df, selected_ingredients):
         return filtered_flavors
 
 def random_recommendations():
-    df = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/products.csv")
+    df = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/combined/products.csv")
     num_rows = len(df)
     random_indices = [random.randint(0, num_rows - 1) for _ in range(10)]
     return random_indices
