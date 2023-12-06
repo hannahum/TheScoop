@@ -3,12 +3,12 @@ from PIL import Image
 import pandas as pd
 import random
 
-df = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/products.csv")
-bj = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/bj/bj_products.csv")
-breyers = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/breyers/breyers_products.csv")
-hd = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/hd/hd_products.csv")
-talenti = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/talenti/talenti_products.csv")
-reviews = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/reviews.csv")
+df = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/combined/products.csv")
+bj = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/bj/bj_products.csv")
+breyers = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/breyers/breyers_products.csv")
+hd = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/hd/hd_products.csv")
+talenti = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/talenti/talenti_products.csv")
+reviews = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/combined/reviews.csv")
 reviews['title'] = reviews['title'].fillna('')
 
 title = st.title('Catalog 🗂️')
@@ -34,7 +34,7 @@ def default_list():
         name = df['name'].iloc[shuffled_flavors[i]]
         st.markdown(f"**__{name}__**", unsafe_allow_html=True)
         key = df['key'].iloc[shuffled_flavors[i]]
-        image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/images/{key}.png"
+        image_path = f"/Users/hannahum/PycharmProjects/The Scoop/combined/images/{key}.png"
         image = Image.open(image_path)
         st.image(image)
 
@@ -94,7 +94,7 @@ def brand_page():
             name = bj['name'].iloc[i]
             st.write(f"**{name}**")
             key = bj['key'].iloc[i]
-            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/bj/bj_images/{key}.png"
+            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/bj/bj_images/{key}.png"
             image = Image.open(image_path)
             st.image(image)
             rating = bj['rating'].iloc[i]
@@ -130,7 +130,7 @@ def brand_page():
             name = breyers['name'].iloc[i]
             st.write(f"**{name}**")
             key = breyers['key'].iloc[i]
-            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/breyers/breyers_images/{key}.png"
+            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/breyers/breyers_images/{key}.png"
             image = Image.open(image_path)
             st.image(image)
             rating = breyers['rating'].iloc[i]
@@ -166,7 +166,7 @@ def brand_page():
             name = hd['name'].iloc[i]
             st.write(f"**{name}**")
             key = hd['key'].iloc[i]
-            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/hd/hd_images/{key}.png"
+            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/hd/hd_images/{key}.png"
             image = Image.open(image_path)
             st.image(image)
             rating = hd['rating'].iloc[i]
@@ -201,7 +201,7 @@ def brand_page():
             name = talenti['name'].iloc[i]
             st.write(f"**{name}**")
             key = talenti['key'].iloc[i]
-            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/talenti/talenti_images/{key}.png"
+            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/talenti/talenti_images/{key}.png"
             image = Image.open(image_path)
             st.image(image)
             rating = talenti['rating'].iloc[i]
@@ -244,7 +244,7 @@ def rating_page():
             name = sorted_indices['name'].iloc[i]
             st.write(f"**{name}**")
             key = sorted_indices['key'].iloc[i]
-            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/images/{key}.png"
+            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/combined/images/{key}.png"
             image = Image.open(image_path)
             st.image(image)
             brand = sorted_indices['brand'].iloc[i]
