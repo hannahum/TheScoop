@@ -4,8 +4,8 @@ from PIL import Image
 import pandas as pd
 import random
 
-df = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/products.csv")
-reviews = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/reviews.csv")
+df = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/combined/products.csv")
+reviews = pd.read_csv("/Users/hannahum/PycharmProjects/The Scoop/combined/reviews.csv")
 reviews['title'] = reviews['title'].fillna('')
 
 title = st.title('Find Your Scoop 🔍')
@@ -39,7 +39,7 @@ def cravings_page():
             name = df['name'].iloc[recs[i]]
             st.write(f"**{name}**")
             key = df['key'].iloc[recs[i]]
-            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/images/{key}.png"
+            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/combined/images/{key}.png"
             image = Image.open(image_path)
             st.image(image)
             brand = df['brand'].iloc[recs[i]]
@@ -112,7 +112,7 @@ def diet_restrictions_page():
                 name = row['name']
                 st.subheader(f"**{name}**")
                 key = row['key']
-                image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/images/{key}.png"
+                image_path = f"/Users/hannahum/PycharmProjects/The Scoop/combined/images/{key}.png"
                 image = Image.open(image_path)
                 st.image(image)
 
@@ -155,7 +155,7 @@ def random_page():
             name = df['name'].iloc[recs[i]]
             st.write(f"**{name}**")
             key = df['key'].iloc[recs[i]]
-            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/ice cream dataset/combined/images/{key}.png"
+            image_path = f"/Users/hannahum/PycharmProjects/The Scoop/combined/images/{key}.png"
             image = Image.open(image_path)
             st.image(image)
 
